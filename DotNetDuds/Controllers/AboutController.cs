@@ -8,7 +8,7 @@ namespace DotNetDuds.Controllers
 {
     public class AboutController : Controller
     {
-        public IActionResult Index()
+        public IActionResult About()
         {
             return View();
         }
