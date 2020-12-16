@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DotNetDuds.Models.Category>
+
+@{
+    ViewData["Title"] = "Shop our Store";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Shop our Store</h1>
+
+<section class="row card-group">
+    @foreach (var c in Model)
+    {
+        <!--css from https://stackoverflow.com/questions/36430816/bootstrap-4-card-deck-with-number-of-columns-based-on-viewport?noredirect=1&lq=1-->
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-4 text-center h-100">
+                <div class="card-body">
+                    <a asp-controller="Shop" asp-action="Browse" asp-route-id="@c.Id">@c.Name</a>
+                </div>
+            </div>
+        </div>
+    }
+</section>
